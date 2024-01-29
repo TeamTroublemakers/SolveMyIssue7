@@ -32,7 +32,7 @@ namespace SolveMyIssue7.DataAccess.Services
 
 		public async Task DeleteAsync(string id)
 		{
-			await _issueCollection.DeleteOneAsync(x => x.Id == id);
+			await _issueCollection.DeleteOneAsync(x => x.Id.ToString() == id);
 		}
 
 		public async Task<IEnumerable<Issue>> GetAllAsync()
@@ -42,7 +42,7 @@ namespace SolveMyIssue7.DataAccess.Services
 
 		public async Task<Issue> GetByIdAsync(string id)
 		{
-			return await _issueCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+			return await _issueCollection.Find(x => x.Id.ToString() == id).FirstOrDefaultAsync();
 		}
 
 		public async Task UpdateAsync(Issue entity)

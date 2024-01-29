@@ -13,3 +13,4 @@ C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\ne
 C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\refint\SolveMyIssue7.DataAccess.dll
 C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.pdb
 C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\ref\SolveMyIssue7.DataAccess.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.sourcelink.json

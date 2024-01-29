@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lzp3VG+jGMcUN//iy+WrXkIWf81BozkY2hW9vBLwVb4=",
+  "Hash": "a86OHzQ9mmUgAkQ0wwAg3mzEKjplXs6WbRuuR67b2Ws=",
   "Source": "SolveMyIssue7",
   "BasePath": "_content/SolveMyIssue7",
   "Mode": "Default",
@@ -300,25 +300,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
-    },
-    {
-      "Identity": "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7\\wwwroot\\logoSMI.png",
-      "SourceId": "SolveMyIssue7",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7\\wwwroot\\",
-      "BasePath": "_content/SolveMyIssue7",
-      "RelativePath": "logoSMI.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\logoSMI.png"
     }
   ]
 }
