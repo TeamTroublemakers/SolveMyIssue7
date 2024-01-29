@@ -1,0 +1,39 @@
+﻿@page "/ViewIssues"
+@using SolveMyIssue7.Common.Interfaces
+@using SolveMyIssue7.DataAccess.Models
+@using SolveMyIssue7.DataAccess.Services
+@using SolveMyIssue7.DataAccess.Services.Interfaces
+@inject IIssueRepository NewIssueRepository
+
+<div class="container mt-3">
+    <h2 class="display-4">Issues</h2>
+    <div class="row">
+        @foreach (var issue in issues)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@issue.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@issue.Category</h6>
+                        <p class="card-text">@issue.Description</p>
+                        <a href="#" class="card-link">More Details</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        @issue.Created.ToString("yyyy-MM-dd")
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<Issue> issues = new List<Issue>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var issuesEnumerable = await NewIssueRepository.GetAllAsync();
+        issues = issuesEnumerable.ToList();
+    }
+
+}
