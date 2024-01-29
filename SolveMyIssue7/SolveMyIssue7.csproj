@@ -7,13 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\logoSMI.png" />
+    <Content Remove="wwwroot\pussel.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SolveMyIssue7.DataAccess\SolveMyIssue7.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="wwwroot\logoSMI.png">
+    <Resource Include="wwwroot\logoSMI.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
+    <Resource Include="wwwroot\pussel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

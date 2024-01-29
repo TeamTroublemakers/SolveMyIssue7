@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using SolveMyIssue7.Data;
 using SolveMyIssue7.DataAccess.Services;
 using SolveMyIssue7.DataAccess.Services.Interfaces;
 using SolveMyIssue7.Routes;
@@ -10,7 +9,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddSingleton<IIssueRepository, IssueRepository>();
 

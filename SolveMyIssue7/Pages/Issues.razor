@@ -5,13 +5,32 @@
 @using SolveMyIssue7.DataAccess.Services.Interfaces
 @inject IIssueRepository IssueRepository
 
+<div class="centered-container">
+<img src="logoSMI.png" width="30%" height="30%" />
+<h2 class="mt-3 display-4">Submit an Issue</h2>
+</div>
 
-<h3>Issues</h3>
-
-<EditForm FormName="Chat" Model="newIssue" OnSubmit="SubmitNewIssue">
-	<InputText @bind-Value="newIssue.Title"></InputText>
-	<InputText @bind-Value="newIssue.Category"></InputText>
-	<button class="btn btn-danger" type="submit">Submit</button>
+<EditForm FormName="Issues" Model="newIssue" OnSubmit="SubmitNewIssue">
+	
+	<div class="form-group">
+		<label>Title</label>
+		<InputText class="form-control" @bind-Value="newIssue.Title"></InputText>
+	</div>
+	<div class="form-group">
+		<label>Description</label>
+		<InputTextArea class="form-control" @bind-Value="newIssue.Description"></InputTextArea>
+	</div>
+	<div class="form-group">
+		<label>Category</label>
+		<InputText class="form-control" @bind-Value="newIssue.Category"></InputText>
+	</div>
+	<div class="form-group">
+		<label>Date</label>
+		<InputDate class="form-control" @bind-Value="newIssue.Created"></InputDate>
+	</div>
+	<div class="form-group centered-content">
+		<button class="btn btn-primary mt-3 mb-3" type="submit">Submit</button>	
+	</div>
 </EditForm>
 
 

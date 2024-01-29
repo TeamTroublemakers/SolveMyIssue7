@@ -48,3 +48,4 @@ C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7\obj\Debug\net7.0\refint
 C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7\obj\Debug\net7.0\SolveMyIssue7.pdb
 C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7\obj\Debug\net7.0\SolveMyIssue7.genruntimeconfig.cache
 C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7\obj\Debug\net7.0\ref\SolveMyIssue7.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7\obj\Debug\net7.0\SolveMyIssue7.sourcelink.json
