@@ -1,0 +1,74 @@
+﻿@using SolveMyIssue7.Common.Interfaces
+@using SolveMyIssue7.DataAccess.Models
+@using SolveMyIssue7.DataAccess.Services
+@using SolveMyIssue7.DataAccess.Services.Interfaces
+@inject IIssueRepository IssueRepository
+@inject ISolutionRepository SolutionRepository
+@page "/solution"
+<h1>Solutions</h1>
+<p>Provide below your Solution!</p>
+<img src="logoSMI.png" alt="logo image" width="150" height="150"
+
+<EditForm class="form-group" Model="newSolution" OnSubmit="AddSolution">
+
+    <img src="Sample_User_Icon.png" alt="users profile image" width="20" height="20" />
+    <label for="user">User</label>
+    <InputText class="form-control" @bind-Value="newSolution.Text"> </InputText>
+
+
+    <button class="btn btn-primary" type="button" @onclick="Like">Like</button>
+    <button class="btn btn-primary" type="button" @onclick="Dislike">Dislike</button>
+
+    <button class="btn btn-primary" type="submit">Add Solution</button>
+    
+</EditForm>
+<label <h4>Display all Users Solutions </h4></label>
+<Virtualize Items="displaySolution.ToList()"  Context="solution">
+   <li class="card bg-gradient border-3">
+    <div>
+        <div>@solution.Text</div>
+            <button class="btn btn-primary" @onclick="() => Comment(solution)">Add Comment</button>
+   </div>
+   </li>
+  
+</Virtualize>
+
+
+
+
+
+
+@code {
+
+    private Solution newSolution = new Solution();
+    private List<Solution> displaySolution = new List<Solution>();
+ 
+
+
+    private async Task AddSolution()
+    {
+
+        await SolutionRepository.AddAsync(newSolution);
+        var allSolutions = await SolutionRepository.GetAllAsync();
+        displaySolution = allSolutions.ToList();
+        newSolution = new Solution();
+    }
+
+    private void Like()
+    {
+       
+    }
+
+    private void Dislike()
+    {
+    }
+    private void Comment(Solution solution)
+    {}
+
+
+
+
+
+ 
+
+}

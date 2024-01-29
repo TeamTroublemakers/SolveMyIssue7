@@ -20,7 +20,7 @@ namespace SolveMyIssue7.DataAccess.Services
 			var collectionName = "Solutions";
 
 			var mongoClient = new MongoClient(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
-			var mongoDatabase = mongoClient.GetDatabase(databaseName);
+            var mongoDatabase = mongoClient.GetDatabase(databaseName);
 			_solutionCollection = mongoDatabase.GetCollection<Solution>(collectionName);
 		}
 

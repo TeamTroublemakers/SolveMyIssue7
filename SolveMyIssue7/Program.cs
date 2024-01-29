@@ -13,6 +13,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddSingleton<IIssueRepository, IssueRepository>();
+builder.Services.AddSingleton<ISolutionRepository, SolutionRepository>();
 
 var app = builder.Build();
 
@@ -34,5 +35,7 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 IssueRoutes.MapIssueEndpoints(app);
+
+SolutionRoutes.MapSolutionEndpoint(app);
 
 app.Run();
