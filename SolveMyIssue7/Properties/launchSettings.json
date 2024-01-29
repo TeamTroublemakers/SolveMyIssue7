@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "SolveMyIssue7": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "mongodb+srv://thetroublemakerscloud23:Cloud23@solvemyissue.tawpybz.mongodb.net/?retryWrites=true&w=majority"
+      },
+      "applicationUrl": "https://localhost:57471;http://localhost:57472"
+    }
+  }
+}
