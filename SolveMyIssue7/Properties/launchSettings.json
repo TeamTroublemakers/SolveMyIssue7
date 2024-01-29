@@ -1,13 +1,23 @@
 {
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:28139",
+      "sslPort": 44362
+    }
+  },
   "profiles": {
     "SolveMyIssue7": {
       "commandName": "Project",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
+      "applicationUrl": "http://localhost:5174",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "CONNECTION_STRING": "mongodb+srv://thetroublemakerscloud23:Cloud23@solvemyissue.tawpybz.mongodb.net/?retryWrites=true&w=majority"
-      },
-      "applicationUrl": "https://localhost:57471;http://localhost:57472"
+      }
+    },
     }
   }
 }

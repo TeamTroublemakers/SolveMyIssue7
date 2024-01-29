@@ -208,6 +208,7 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\favicon.png))</OriginalItemSpec>
     </StaticWebAsset>
+<<<<<<< HEAD
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\GetImage.png))">
       <SourceType>Package</SourceType>
       <SourceId>SolveMyIssue7</SourceId>
@@ -256,6 +257,8 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Sample_User_Icon.png))</OriginalItemSpec>
     </StaticWebAsset>
+=======
+>>>>>>> c6d67301f8e2fd04211a5bfe5d1dca234906a600
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\SolveMyIssue7.bundle.scp.css))">
       <SourceType>Package</SourceType>
       <SourceId>SolveMyIssue7</SourceId>
