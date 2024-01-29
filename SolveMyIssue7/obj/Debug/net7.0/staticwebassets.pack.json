@@ -65,10 +65,13 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\vasil\\Desktop\\TROUBLES\\SolveMyIssue7\\wwwroot\\logoSMI.png",
       "PackagePath": "staticwebassets\\logoSMI.png"
     },
     {
+=======
+>>>>>>> c6d67301f8e2fd04211a5bfe5d1dca234906a600
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.SolveMyIssue7.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

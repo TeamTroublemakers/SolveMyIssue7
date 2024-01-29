@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "8Q6GOcGcBlMYXAeM6Kud1JeuJNcWj7pPKVrHoeki5w8=",
+=======
+  "Hash": "a86OHzQ9mmUgAkQ0wwAg3mzEKjplXs6WbRuuR67b2Ws=",
+>>>>>>> c6d67301f8e2fd04211a5bfe5d1dca234906a600
   "Source": "SolveMyIssue7",
   "BasePath": "_content/SolveMyIssue7",
   "Mode": "Default",
@@ -300,6 +304,7 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+<<<<<<< HEAD
     },
     {
       "Identity": "C:\\Users\\vasil\\Desktop\\TROUBLES\\SolveMyIssue7\\wwwroot\\GetImage.png",
@@ -357,6 +362,8 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Sample_User_Icon.png"
+=======
+>>>>>>> c6d67301f8e2fd04211a5bfe5d1dca234906a600
     }
   ]
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.DataAccess.deps.json
 C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.DataAccess.dll
 C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.DataAccess.pdb
@@ -14,3 +15,21 @@ C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveM
 C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\obj\Debug\net7.0\refint\SolveMyIssue7.DataAccess.dll
 C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.pdb
 C:\Users\vasil\Desktop\TROUBLES\SolveMyIssue7.DataAccess\obj\Debug\net7.0\ref\SolveMyIssue7.DataAccess.dll
+=======
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.DataAccess.deps.json
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.DataAccess.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.DataAccess.pdb
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.Common.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\bin\Debug\net7.0\SolveMyIssue7.Common.pdb
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.AssemblyInfo.cs
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.csproj.CopyComplete
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\refint\SolveMyIssue7.DataAccess.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.pdb
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\ref\SolveMyIssue7.DataAccess.dll
+C:\Users\Angela\source\repos\SolveMyIssue7\SolveMyIssue7.DataAccess\obj\Debug\net7.0\SolveMyIssue7.DataAccess.sourcelink.json
+>>>>>>> c6d67301f8e2fd04211a5bfe5d1dca234906a600
