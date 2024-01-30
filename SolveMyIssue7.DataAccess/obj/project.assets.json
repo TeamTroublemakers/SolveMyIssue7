@@ -795,39 +795,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Angela\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Sad Hentai\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7.DataAccess\\SolveMyIssue7.DataAccess.csproj",
+      "projectUniqueName": "F:\\Coding\\uhhhhhhhhhh\\SolveMyIssue7\\SolveMyIssue7.DataAccess\\SolveMyIssue7.DataAccess.csproj",
       "projectName": "SolveMyIssue7.DataAccess",
-      "projectPath": "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7.DataAccess\\SolveMyIssue7.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\Angela\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7.DataAccess\\obj\\",
+      "projectPath": "F:\\Coding\\uhhhhhhhhhh\\SolveMyIssue7\\SolveMyIssue7.DataAccess\\SolveMyIssue7.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Sad Hentai\\.nuget\\packages\\",
+      "outputPath": "F:\\Coding\\uhhhhhhhhhh\\SolveMyIssue7\\SolveMyIssue7.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Angela\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Sad Hentai\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7.Common\\SolveMyIssue7.Common.csproj": {
-              "projectPath": "C:\\Users\\Angela\\source\\repos\\SolveMyIssue7\\SolveMyIssue7.Common\\SolveMyIssue7.Common.csproj"
+            "F:\\Coding\\uhhhhhhhhhh\\SolveMyIssue7\\SolveMyIssue7.Common\\SolveMyIssue7.Common.csproj": {
+              "projectPath": "F:\\Coding\\uhhhhhhhhhh\\SolveMyIssue7\\SolveMyIssue7.Common\\SolveMyIssue7.Common.csproj"
             }
           }
         }
