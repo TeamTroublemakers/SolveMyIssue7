@@ -14,14 +14,10 @@ namespace SolveMyIssue7.DataAccess.Services
 	{
 		private readonly IMongoCollection<Solution> _solutionCollection;
 
-        public SolutionRepository()
-        {
-			var databaseName = "SolveMyIssue";
+		public SolutionRepository(IMongoDatabase db)
+		{
 			var collectionName = "Solutions";
-
-			var mongoClient = new MongoClient(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
-            var mongoDatabase = mongoClient.GetDatabase(databaseName);
-			_solutionCollection = mongoDatabase.GetCollection<Solution>(collectionName);
+			_solutionCollection = db.GetCollection<Solution>(collectionName);
 		}
 
 

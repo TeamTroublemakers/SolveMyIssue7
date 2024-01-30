@@ -14,14 +14,11 @@ namespace SolveMyIssue7.DataAccess.Services
 	{
 		private readonly IMongoCollection<User> _userCollection;
 
-        public UserRepository()
-        {
-			var databaseName = "SolveMyIssue";
+		public UserRepository(IMongoDatabase db)
+		{
 			var collectionName = "Issues";
 
-			var mongoClient = new MongoClient(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
-            var mongoDatabase = mongoClient.GetDatabase(databaseName);
-			_userCollection = mongoDatabase.GetCollection<User>(collectionName);
+			_userCollection = db.GetCollection<User>(collectionName);
 		}
 
 
@@ -45,7 +42,7 @@ namespace SolveMyIssue7.DataAccess.Services
 			return await _userCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 		}
 
-		public async Task UpdateAsync( User entity)
+		public async Task UpdateAsync(User entity)
 		{
 			await _userCollection.ReplaceOneAsync(x => x.Id == entity.Id, entity);
 		}

@@ -14,14 +14,11 @@ namespace SolveMyIssue7.DataAccess.Services
 		private readonly IMongoCollection<Organization> _organizationCollection;
 
 
-		public OrganizationRepository()
-        {
-			var databaseName = "SolveMyIssue";
+		public OrganizationRepository(IMongoDatabase db)
+		{
 			var collectionName = "Organization";
 
-			var mongoClient = new MongoClient(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
-			var mongoDatabase = mongoClient.GetDatabase(databaseName);
-			_organizationCollection = mongoDatabase.GetCollection<Organization>(collectionName);
+			_organizationCollection = db.GetCollection<Organization>(collectionName);
 		}
 		public async Task AddAsync(Organization entity)
 		{

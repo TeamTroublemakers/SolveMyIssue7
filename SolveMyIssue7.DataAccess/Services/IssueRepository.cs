@@ -13,16 +13,10 @@ namespace SolveMyIssue7.DataAccess.Services
 	public class IssueRepository : IIssueRepository
 	{
 		private readonly IMongoCollection<Issue> _issueCollection;
-		public IssueRepository()
+		public IssueRepository(IMongoDatabase db)
 		{
-			
-			var databaseName = "SolveMyIssue";
 			var collectionName = "Issues";
-
-			var mongoClient = new MongoClient(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
-			var mongoDatabase = mongoClient.GetDatabase(databaseName);
-			_issueCollection = mongoDatabase.GetCollection<Issue>(collectionName);
-
+			_issueCollection = db.GetCollection<Issue>(collectionName);
 		}
 
 		public async Task AddAsync(Issue entity)
