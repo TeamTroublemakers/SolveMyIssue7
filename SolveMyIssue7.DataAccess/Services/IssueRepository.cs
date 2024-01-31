@@ -7,13 +7,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 
 namespace SolveMyIssue7.DataAccess.Services
 {
 	public class IssueRepository : IIssueRepository
 	{
 		private readonly IMongoCollection<Issue> _issueCollection;
-		public IssueRepository()
+        private readonly IMongoCollection<Solution> _solutionCollection;
+        public IssueRepository()
 		{
 			
 			var databaseName = "SolveMyIssue";
@@ -49,5 +51,7 @@ namespace SolveMyIssue7.DataAccess.Services
 		{
 			await _issueCollection.ReplaceOneAsync(x => x.Id == entity.Id, entity);
 		}
-	}
+
+        
+    }
 }

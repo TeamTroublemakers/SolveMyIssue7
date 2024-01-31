@@ -12,7 +12,7 @@ namespace SolveMyIssue7.DataAccess.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-
+        public string IssueId { get; set; }
         public string Text { get; set; }
         public List<string>? Comments = new List<string>();
     }

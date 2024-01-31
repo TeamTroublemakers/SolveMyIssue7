@@ -20,7 +20,33 @@ namespace SolveMyIssue7.Routes
 			{
 				await issueRepository.AddAsync(newIssue);
 			});
-		}
-	}
 
+			//         //app.MapDelete()
+
+
+			//         public async Task AddAsync(Issue entity)
+			//         {
+			//             await _issueCollection.InsertOneAsync(entity);
+			//         }
+
+			//         public async Task DeleteAsync(string id)
+			//         {
+			//             await _issueCollection.DeleteOneAsync(x => x.Id.ToString() == id);
+			//         }
+
+
+
+			//         public async Task<Issue> GetByIdAsync(string id)
+			//         {
+			//             return await _issueCollection.Find(x => x.Id.ToString() == id).FirstOrDefaultAsync();
+			//         }
+
+			//         public async Task UpdateAsync(Issue entity)
+			//         {
+			//             await _issueCollection.ReplaceOneAsync(x => x.Id == entity.Id, entity);
+			//         }
+			//     }
+		}
+
+	}
 }
