@@ -64,17 +64,21 @@
     </div>
 
         <br />
-    <div class="glassmorphism centered-container">
+
+    <div>
         <h2>Solutions</h2>
         @if (solutions != null && solutions.Any())
         {
             foreach (var solution in solutions)
             {
-                <div class="solution-container form-group">
-                    <div class="solution-text form-control">@solution.Text</div> 
+                <div class="solution-container">
+                    <div class="solution-text">@solution.Text</div>
+                    <button class="btn btn-primary mt-2" @onclick="() => UpdateSolution(solution.Id)">Update Solution</button>
+                    <button class="btn btn-danger mt-2" @onclick="() => DeleteSolution(solution.Id)">Delete Solution</button>
                 </div>
             }
         }
+       
         else
         {
             <p>No solutions found for this issue.</p>
@@ -118,13 +122,47 @@ else
         }
     }
 
-    
+
     private async Task<Solution> GetSolution(string solutionId)
     {
         return await newSolutionRepository.GetByIdAsync(solutionId);
 
     }
 
-    
+    private async Task UpdateSolution(string solutionId)
+    {
+        solution = await GetSolution(solutionId);
+        if (solution != null)
+        {
+            NavManager.NavigateTo($"/updateSolution/{solution.Id}");
+        }
+        else
+        {
+           
+        }
+    }
 
+    private async Task DeleteSolution(string solutionId)
+    {
+        await newSolutionRepository.DeleteAsync(solutionId);
+        await RefreshSolutions();
+    }
+
+    private async Task RefreshSolutions()
+    {
+       
+        if (issue != null && issue.Solutions != null)
+        {
+            solutions.Clear();
+            foreach (var solutionId in issue.Solutions)
+            {
+                var solution = await newSolutionRepository.GetByIdAsync(solutionId);
+                if (solution != null && solution.IssueId == IssueId)
+                {
+                    solutions.Add(solution);
+                }
+            }
+        }
+    }
 }
+

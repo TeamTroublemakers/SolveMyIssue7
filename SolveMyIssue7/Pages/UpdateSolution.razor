@@ -1,0 +1,43 @@
+﻿@page "/updateSolution/{solutionId}"
+@using MongoDB.Bson
+@using SolveMyIssue7.Common.Interfaces
+@using SolveMyIssue7.DataAccess.Models
+@using SolveMyIssue7.DataAccess.Services
+@using SolveMyIssue7.DataAccess.Services.Interfaces
+@inject ISolutionRepository SolutionRepository
+@inject IIssueRepository IssueRepository
+
+@inject NavigationManager NavManager
+
+<h3>Update Solution</h3>
+
+<EditForm Model="solution" OnValidSubmit="Update">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="text">Change Text below</label>
+        <InputText id="text" class="form-control" @bind-Value="solution.Text" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public string solutionId { get; set; }
+
+    private Solution solution = new Solution();
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+        solution = await SolutionRepository.GetByIdAsync(solutionId);
+    }
+
+    private async Task Update()
+    {
+        await SolutionRepository.UpdateAsync(solution);
+        NavManager.NavigateTo($"/issueDetails/{solution.IssueId}");
+    }
+}

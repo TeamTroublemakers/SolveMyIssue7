@@ -34,6 +34,6 @@ app.MapFallbackToPage("/_Host");
 
 IssueRoutes.MapIssueEndpoints(app);
 
-SolutionRoutes.MapSolutionEndpoint(app);
+//SolutionRoutes.MapSolutionEndpoint(app);
 
 app.Run();
