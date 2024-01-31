@@ -5,9 +5,31 @@ html, body {
 }
 
 body {
-    background-color:cornflowerblue
+    background-color:black
    
 }
+
+.background-img{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit:cover;
+}
+
+.card-style {
+ 
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+    .card-style p {
+        max-height: calc(16px * 1.5);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        
+    }
 
 .glassmorphism {
     background: rgba(255, 255, 255, 0.1); 
@@ -24,11 +46,28 @@ body {
     width: 100%;
 }
 
+.form-control {
+    background-color: rgba(0,0,0,0.6);
+    outline:0;
+    border:none;
+    color:white;
 
-
-a, .btn-link {
-    color: #0071c1;
 }
+
+    .form-control:active {
+        background-color: rgba(0,0,0,0.9) !important;
+        outline: 0;
+        border: none;
+    }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(0,0,0,0.9) inset !important;
+}
+
+
 
 .btn-primary {
     color: #fff;
