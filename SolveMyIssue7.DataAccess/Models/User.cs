@@ -1,3 +1,5 @@
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,9 @@ namespace SolveMyIssue7.DataAccess.Models
 {
     public class User
     {
-		public string Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 		
         private string Name { get; set; }
         private string Email { get; set; }
@@ -18,9 +22,8 @@ namespace SolveMyIssue7.DataAccess.Models
         private List<string> LikeIds { get; set; }
         private List<string> OrganizationIds { get; set; }
 
-        public User(string id,string name, string email, string password)
+        public User(string name, string email, string password)
         {
-            Id = id;
             Name = name;
             Email = email;
             Password = password;
@@ -30,11 +33,11 @@ namespace SolveMyIssue7.DataAccess.Models
             LikeIds = new List<string>();
         }
 
-		public User(string name, string email, string password)
-		{
-			Name = name;
-			Email = email;
-			Password = password;
-		}
+		//public User(string name, string email, string password)
+		//{
+		//	Name = name;
+		//	Email = email;
+		//	Password = password;
+		//}
 	}
 }

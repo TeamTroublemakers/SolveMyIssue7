@@ -6,22 +6,24 @@ html, body {
 
 body {
     background-color:cornflowerblue
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+   
 }
 
-/*.glassmorphism {
+.glassmorphism {
     background: rgba(255, 255, 255, 0.1); 
     backdrop-filter: blur(10px); 
     border-radius: 10px;
     padding: 20px;
-    width: 300px;
+    width: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     color: #fff;
     text-align: center;
-}*/
+}
+
+.form-group, .form-control {
+    width: 100%;
+}
+
 
 
 a, .btn-link {
@@ -99,4 +101,9 @@ a, .btn-link {
     padding: 10px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
+}
+
+img{
+    width:15%;
+    height:15%;
 }

@@ -32,13 +32,13 @@
 </nav>
 
 <div class="container mt-3">
-    <h2 class="display-4">Issues</h2>
+    <h2 class="display-4 glassmorphism">Issues</h2>
     <div class="row">
         @foreach (var issue in issues)
         {
             <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card glassmorphism">
+                    <div class="card-body ">
                         <h5 class="card-title">@issue.Title</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@issue.Category</h6>
                         <p class="card-text">@issue.Description</p>
