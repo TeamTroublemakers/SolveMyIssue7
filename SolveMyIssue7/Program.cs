@@ -21,7 +21,7 @@ builder.Services.AddSingleton(db);
 builder.Services.AddSingleton<IIssueRepository, IssueRepository>();
 builder.Services.AddSingleton<ISolutionRepository, SolutionRepository>();
 
-builder.Services.AddScoped<IUserPasswordStore<User>, UserStore>();
+// builder.Services.AddScoped<IUserPasswordStore<User>, UserStore>();
 
 var app = builder.Build();
 

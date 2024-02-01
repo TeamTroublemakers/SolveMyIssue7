@@ -13,14 +13,14 @@ namespace SolveMyIssue7.DataAccess.Models
                 [BsonRepresentation(BsonType.ObjectId)]
                 public string Id { get; set; }
 
-                private string Name { get; set; }
-                private string Email { get; set; }
-                private string Password { get; set; }
-                private List<string> IssueIds { get; set; }
-                private List<string> SolutionIds { get; set; }
-                private List<string> CommentIds { get; set; }
-                private List<string> LikeIds { get; set; }
-                private List<string> OrganizationIds { get; set; }
+                public string Name { get; set; }
+                public string Email { get; set; }
+                public string Password { get; set; }
+                public List<string> IssueIds { get; set; }
+                public List<string> SolutionIds { get; set; }
+                public List<string> CommentIds { get; set; }
+                public List<string> LikeIds { get; set; }
+                public List<string> OrganizationIds { get; set; }
 
                 public User(string name, string email, string password)
                 {
