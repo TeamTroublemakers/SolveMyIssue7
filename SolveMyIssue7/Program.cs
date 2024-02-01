@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Identity;
 using MongoDB.Driver;
+using SolveMyIssue7.DataAccess.Auth;
+using SolveMyIssue7.DataAccess.Models;
 using SolveMyIssue7.DataAccess.Services;
 using SolveMyIssue7.DataAccess.Services.Interfaces;
 using SolveMyIssue7.Routes;
@@ -17,6 +20,8 @@ builder.Services.AddSingleton(db);
 
 builder.Services.AddSingleton<IIssueRepository, IssueRepository>();
 builder.Services.AddSingleton<ISolutionRepository, SolutionRepository>();
+
+builder.Services.AddScoped<IUserPasswordStore<User>, UserStore>();
 
 var app = builder.Build();
 

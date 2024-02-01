@@ -7,7 +7,7 @@
 @page "/solution"
 <h1>Solutions</h1>
 <p>Provide below your Solution!</p>
-<img src="logoSMI.png" alt="logo image" width="150" height="150"
+<img src="logoSMI.png" alt="logo image" width="150" height="150"/>
 
 <EditForm class="form-group" Model="newSolution" OnSubmit="AddSolution">
 
@@ -22,7 +22,7 @@
     <button class="btn btn-primary" type="submit">Add Solution</button>
     
 </EditForm>
-<label <h4>Display all Users Solutions </h4></label>
+<label> <h4>Display all Users Solutions </h4></label>
 <Virtualize Items="displaySolution.ToList()"  Context="solution">
    <li class="card bg-gradient border-3">
     <div>
