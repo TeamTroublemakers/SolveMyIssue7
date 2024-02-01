@@ -7,13 +7,20 @@ using System.Threading.Tasks;
 
 namespace SolveMyIssue7.DataAccess.Models
 {
+    [BsonIgnoreExtraElements]
     public class Solution
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-
+      
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string IssueId { get; set; }
         public string Text { get; set; }
-        public List<string>? Comments = new List<string>();
+        public List<Comment> Comments { get; set; } = new List<Comment>();
+
+        public int Likes { get; set; }
+        public int Dislikes { get; set; }
+      
     }
 }

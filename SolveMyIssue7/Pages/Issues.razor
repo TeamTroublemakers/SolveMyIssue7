@@ -4,11 +4,14 @@
 @using SolveMyIssue7.DataAccess.Services
 @using SolveMyIssue7.DataAccess.Services.Interfaces
 @inject IIssueRepository IssueRepository
+@inject NavigationManager NavManager
 
-<div class="centered-container">
-<img src="logoSMI.png" width="30%" height="30%" />
+
+<div class="centered-container glassmorphism">
 <h2 class="mt-3 display-4">Submit an Issue</h2>
 </div>
+
+<div class="glassmorphism">
 
 <EditForm FormName="Issues" Model="newIssue" OnSubmit="SubmitNewIssue">
 	
@@ -32,12 +35,12 @@
 		<button class="btn btn-primary mt-3 mb-3" type="submit">Submit</button>	
 	</div>
 </EditForm>
+</div>
+
 
 
 
 @code {
-
-
 
 	private Issue newIssue = new Issue();
 
@@ -46,8 +49,6 @@
 		await IssueRepository.AddAsync(newIssue);
 		newIssue = new Issue(); 
 	}
-
-	
 
 }
 

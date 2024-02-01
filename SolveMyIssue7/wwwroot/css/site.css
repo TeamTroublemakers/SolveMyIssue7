@@ -5,16 +5,69 @@ html, body {
 }
 
 body {
-    background: #87CEEB;
+    background-color:black
+   
 }
 
-h1:focus {
-    outline: none;
+.background-img{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    object-fit:cover;
 }
 
-a, .btn-link {
-    color: #0071c1;
+.card-style {
+ 
+    white-space: nowrap;
+    overflow: hidden;
 }
+
+    .card-style p {
+        max-height: calc(16px * 1.5);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        
+    }
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+}
+
+.form-group, .form-control {
+    width: 100%;
+}
+
+.form-control {
+    background-color: rgba(0,0,0,0.6);
+    outline:0;
+    border:none;
+    color:white;
+
+}
+
+    .form-control:active {
+        background-color: rgba(0,0,0,0.9) !important;
+        outline: 0;
+        border: none;
+    }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(0,0,0,0.9) inset !important;
+}
+
+
 
 .btn-primary {
     color: #fff;
@@ -80,4 +133,16 @@ a, .btn-link {
 
 .centered-content {
     text-align: center;
+}
+
+.solution-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+img{
+    width:15%;
+    height:15%;
 }

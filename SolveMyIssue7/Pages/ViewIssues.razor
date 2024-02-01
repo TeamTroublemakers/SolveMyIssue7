@@ -4,19 +4,22 @@
 @using SolveMyIssue7.DataAccess.Services
 @using SolveMyIssue7.DataAccess.Services.Interfaces
 @inject IIssueRepository NewIssueRepository
+@inject NavigationManager NavManager
+
+
 
 <div class="container mt-3">
-    <h2 class="display-4">Issues</h2>
+    <h2 class="display-4 glassmorphism">Issues</h2>
     <div class="row">
         @foreach (var issue in issues)
         {
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <div class="card-body">
+            <div class="col-md-4 mb-3 card-style">
+                <div class="card glassmorphism">
+                    <div class="card-body ">
                         <h5 class="card-title">@issue.Title</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@issue.Category</h6>
                         <p class="card-text">@issue.Description</p>
-                        <a href="#" class="card-link">More Details</a>
+                        <a href="issueDetails/@issue.Id" class="card-link">More Details</a>
                     </div>
                     <div class="card-footer text-muted">
                         @issue.Created.ToString("yyyy-MM-dd")

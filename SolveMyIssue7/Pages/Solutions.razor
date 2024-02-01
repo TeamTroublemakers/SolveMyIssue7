@@ -1,13 +1,21 @@
-﻿@using SolveMyIssue7.Common.Interfaces
+﻿@page "/solution/{issueId}"
+@using MongoDB.Bson
+@using SolveMyIssue7.Common.Interfaces
 @using SolveMyIssue7.DataAccess.Models
 @using SolveMyIssue7.DataAccess.Services
 @using SolveMyIssue7.DataAccess.Services.Interfaces
 @inject IIssueRepository IssueRepository
 @inject ISolutionRepository SolutionRepository
-@page "/solution"
+@inject NavigationManager NavManager
+
+
 <h1>Solutions</h1>
 <p>Provide below your Solution!</p>
+<<<<<<< HEAD
 <img src="logoSMI.png" alt="logo image" width="150" height="150"/>
+=======
+<img src="logoSMI.png" alt="logo image" width="150" height="150" />
+>>>>>>> 48e1c2263de74c449a256173ce184ca7e8bc14a9
 
 <EditForm class="form-group" Model="newSolution" OnSubmit="AddSolution">
 
@@ -16,59 +24,80 @@
     <InputText class="form-control" @bind-Value="newSolution.Text"> </InputText>
 
 
-    <button class="btn btn-primary" type="button" @onclick="Like">Like</button>
-    <button class="btn btn-primary" type="button" @onclick="Dislike">Dislike</button>
 
     <button class="btn btn-primary" type="submit">Add Solution</button>
     
 </EditForm>
 <label> <h4>Display all Users Solutions </h4></label>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48e1c2263de74c449a256173ce184ca7e8bc14a9
 <Virtualize Items="displaySolution.ToList()"  Context="solution">
    <li class="card bg-gradient border-3">
     <div>
         <div>@solution.Text</div>
-            <button class="btn btn-primary" @onclick="() => Comment(solution)">Add Comment</button>
+
+            <button class="btn btn-primary" type="button" @onclick="async () => await Like(solution)">Like</button>
+            <span class="like-count">@solution.Likes</span>
+            <button class="btn btn-primary" type="button" @onclick="async () => await Dislike(solution)">Dislike</button>
+            <span class="dislike-count">@solution.Dislikes</span>
+
+          
    </div>
    </li>
-  
 </Virtualize>
-
-
-
-
 
 
 @code {
 
+    [Parameter]
+    public string IssueId { get; set; }
+
     private Solution newSolution = new Solution();
     private List<Solution> displaySolution = new List<Solution>();
- 
+
 
 
     private async Task AddSolution()
     {
 
+        newSolution.IssueId = IssueId;
         await SolutionRepository.AddAsync(newSolution);
+        await AddSolutionToIssue(IssueId, newSolution.Id.ToString());
         var allSolutions = await SolutionRepository.GetAllAsync();
         displaySolution = allSolutions.ToList();
         newSolution = new Solution();
     }
 
-    private void Like()
+    private async Task AddSolutionToIssue(string issueId, string solutionId)
     {
-       
+        var issue = await IssueRepository.GetByIdAsync(issueId);
+        if (issue != null)
+        {
+            if (issue.Solutions == null)
+            {
+                issue.Solutions = new List<string>();
+            }
+            issue.Solutions.Add(solutionId); 
+            await IssueRepository.UpdateAsync(issue);
+        }
     }
 
-    private void Dislike()
+
+    private async Task  Like(Solution solution)
     {
+        solution.Likes++;
+        await SolutionRepository.UpdateAsync(solution);
     }
-    private void Comment(Solution solution)
-    {}
+
+    private async Task  Dislike(Solution solution)
+    {
+        solution.Dislikes++;
+        await SolutionRepository.UpdateAsync(solution);
+    }
+
+   }
 
 
 
-
-
- 
-
-}

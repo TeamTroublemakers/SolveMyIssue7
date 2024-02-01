@@ -7,12 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 
 namespace SolveMyIssue7.DataAccess.Services
 {
 	public class IssueRepository : IIssueRepository
 	{
 		private readonly IMongoCollection<Issue> _issueCollection;
+		private readonly IMongoCollection<Solution> _solutionCollection;
 		public IssueRepository(IMongoDatabase db)
 		{
 			var collectionName = "Issues";

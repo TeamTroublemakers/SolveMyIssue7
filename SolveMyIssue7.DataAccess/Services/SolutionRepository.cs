@@ -46,9 +46,6 @@ namespace SolveMyIssue7.DataAccess.Services
 			await _solutionCollection.ReplaceOneAsync(x => x.Id == entity.Id, entity);
 		}
 
-		Task IRepository<Solution>.UpdateAsync(Solution entity)
-		{
-			throw new NotImplementedException();
-		}
+		
 	}
 }

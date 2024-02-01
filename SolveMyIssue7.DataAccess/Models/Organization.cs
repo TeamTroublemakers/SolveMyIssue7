@@ -1,3 +1,5 @@
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +9,9 @@ namespace SolveMyIssue7.DataAccess.Models
 {
     public class Organization
     {
-		public string Id { get; set; }
-		private Guid _id;
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         private string _name;
         private string _email;
         private List<string> _adminIds;
@@ -17,7 +20,7 @@ namespace SolveMyIssue7.DataAccess.Models
 
         public Organization(string name, string email)
         {
-            _id = Guid.NewGuid();
+           
             _name = name;
             _email = email;
             _adminIds = new List<string>();

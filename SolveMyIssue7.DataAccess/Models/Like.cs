@@ -1,3 +1,5 @@
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +9,21 @@ namespace SolveMyIssue7.DataAccess.Models
 {
     public class Like
     {
-        private Guid _id;
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        private string _id;
+        [BsonRepresentation(BsonType.ObjectId)]
         private string _userId;
+        [BsonRepresentation(BsonType.ObjectId)]
         private string _issueId;
+        [BsonRepresentation(BsonType.ObjectId)]
         private string? _solutionId;
+        [BsonRepresentation(BsonType.ObjectId)]
         private string? _commentId;
 
         public Like(string userId, string issueId)
         {
-            _id = Guid.NewGuid();
+
             _userId = userId;
             _issueId = issueId;
         }

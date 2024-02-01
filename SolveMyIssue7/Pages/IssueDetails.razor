@@ -1,0 +1,144 @@
+﻿@page "/issueDetails/{IssueId}"
+@using MongoDB.Bson
+@using SolveMyIssue7.Common.Interfaces
+@using SolveMyIssue7.DataAccess.Models
+@using SolveMyIssue7.DataAccess.Services
+@using SolveMyIssue7.DataAccess.Services.Interfaces
+@inject IIssueRepository IssueRepository
+@inject ISolutionRepository newSolutionRepository
+@inject NavigationManager NavManager
+
+
+<div class="centered-container glassmorphism">
+    <h2 class="mt-3 display-4">Issue Details</h2>
+</div>
+
+@if (issue != null)
+{
+    <div class="glassmorphism centered-container">
+        <h2>@issue.Title</h2>
+
+        <div class="form-group">
+            <label>Title:</label>
+            <div id="title" class="form-control">@issue.Title</div>
+        </div>
+
+        <div class="form-group">
+            <label>Description:</label>
+            <div id="description" class="form-control">@issue.Description</div>
+        </div>
+
+        <div class="form-group">
+            <label>Category:</label>
+            <div id="category" class="form-control">@issue.Category</div>
+        </div>
+
+        <div class="form-group">
+            <a href="updateIssue/@issue.Id" class="btn btn-primary mt-3">Update Issue</a>
+            <a href="solution/@issue.Id" class="btn btn-success mt-3">Add solution</a>
+        </div>
+    </div>
+
+        <br />
+
+    <div>
+        <h2>Solutions</h2>
+        @if (solutions != null && solutions.Any())
+        {
+            foreach (var solution in solutions)
+            {
+                <div class="solution-container">
+                    <div class="solution-text">@solution.Text</div>
+                    <button class="btn btn-primary mt-2" @onclick="() => UpdateSolution(solution.Id)">Update Solution</button>
+                    <button class="btn btn-danger mt-2" @onclick="() => DeleteSolution(solution.Id)">Delete Solution</button>
+                </div>
+            }
+        }
+       
+        else
+        {
+            <p>No solutions found for this issue.</p>
+        }
+
+    </div>
+}
+
+else
+{
+    <p>Loading...</p>
+}
+
+
+@code {
+
+    [Parameter]
+    public string IssueId { get; set; } 
+    public string SolutionId { get; set; }
+
+    private Issue issue;
+    private Solution solution;
+
+    private List<Solution> solutions = new List<Solution>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        issue = await IssueRepository.GetByIdAsync(IssueId);
+        if (issue != null && issue.Solutions != null)
+        {
+            solutions.Clear();
+            foreach (var solutionId in issue.Solutions)
+            {
+                var solution = await newSolutionRepository.GetByIdAsync(solutionId);
+                if (solution != null && solution.IssueId == IssueId)
+                {
+                    solutions.Add(solution);
+                }
+            }
+        }
+    }
+
+
+    private async Task<Solution> GetSolution(string solutionId)
+    {
+        return await newSolutionRepository.GetByIdAsync(solutionId);
+
+    }
+
+    private async Task UpdateSolution(string solutionId)
+    {
+        solution = await GetSolution(solutionId);
+        if (solution != null)
+        {
+            NavManager.NavigateTo($"/updateSolution/{solution.Id}");
+        }
+        else
+        {
+           
+        }
+    }
+
+    private async Task DeleteSolution(string solutionId)
+    {
+        await newSolutionRepository.DeleteAsync(solutionId);
+        await RefreshSolutions();
+    }
+
+    private async Task RefreshSolutions()
+    {
+       
+        if (issue != null && issue.Solutions != null)
+        {
+            solutions.Clear();
+            foreach (var solutionId in issue.Solutions)
+            {
+                var solution = await newSolutionRepository.GetByIdAsync(solutionId);
+                if (solution != null && solution.IssueId == IssueId)
+                {
+                    solutions.Add(solution);
+                }
+            }
+        }
+    }
+}
+

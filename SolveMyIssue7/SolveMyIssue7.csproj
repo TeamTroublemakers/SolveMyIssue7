@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\backgroundSMI.webp" />
     <Content Remove="wwwroot\logoSMI.png" />
     <Content Remove="wwwroot\pussel.png" />
+    <Content Remove="wwwroot\puzzel.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,10 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="wwwroot\backgroundSMI.webp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="wwwroot\logoSMI.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="wwwroot\pussel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="wwwroot\puzzel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

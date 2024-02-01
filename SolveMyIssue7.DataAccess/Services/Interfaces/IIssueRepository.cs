@@ -10,7 +10,8 @@ namespace SolveMyIssue7.DataAccess.Services.Interfaces
 {
 	public interface IIssueRepository : IRepository<Issue>
 	{
+        
+    }
 
-
-	}
 }
+

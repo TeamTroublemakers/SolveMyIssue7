@@ -260,7 +260,7 @@ paket-files/
 __pycache__/
 *.pyc
 
-bin
-obj
+*/bin
+*/obj
 
 launchSettings.json
