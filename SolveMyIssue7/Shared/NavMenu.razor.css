@@ -1,1 +1,35 @@
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container-fluid > div {
+  flex: 1 0 0;
+}
 
+#navbarNav {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  gap: 2rem !important;
+}
+
+.logo {
+  all: unset;
+  user-select: none;
+  cursor: pointer;
+  color: var(--on-background);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2rem;
+  padding-right: 0.75rem;
+}
+
+.nav-link {
+  color: var(--on-surface) !important;
+  text-decoration: none;
+
+  transition: all 0.1s ease-out;
+}
+.nav-link:hover {
+  color: var(--on-background) !important;
+  transform: translateY(-2px) !important;
+}

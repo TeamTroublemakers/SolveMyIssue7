@@ -33,6 +33,11 @@ namespace SolveMyIssue7.DataAccess.Models
                         LikeIds = new List<string>();
                 }
 
+                public User()
+                {
+
+                }
+
                 //public User(string name, string email, string password)
                 //{
                 //	Name = name;

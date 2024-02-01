@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+
   <ItemGroup>
     <Content Remove="wwwroot\backgroundSMI.webp" />
     <Content Remove="wwwroot\logoSMI.png" />
@@ -14,8 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.15" /> 
+  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.15" />
+
     <ProjectReference Include="..\SolveMyIssue7.DataAccess\SolveMyIssue7.DataAccess.csproj" />
   </ItemGroup>
+
+<ItemGroup>
+</ItemGroup>
 
   <ItemGroup>
     <Resource Include="wwwroot\backgroundSMI.webp">
@@ -33,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCore.Identity.Mongo" Version="8.3.3" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.15" />
   </ItemGroup>

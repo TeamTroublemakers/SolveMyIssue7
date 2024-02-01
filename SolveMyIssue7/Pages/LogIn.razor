@@ -1,0 +1,45 @@
+﻿@page "/login"
+@using SolveMyIssue7.Common.Interfaces
+@using SolveMyIssue7.DataAccess.Models
+@using SolveMyIssue7.DataAccess.Services
+@using SolveMyIssue7.DataAccess.Services.Interfaces
+@using Microsoft.AspNetCore.Identity;
+@inject IIssueRepository IssueRepository
+@* @inject NavigationManager NavManager *@
+@* @inject SignInManager<User> SignInManager *@
+@* @inject NavigationManager NavigationManager *@
+
+<EditForm Model="@user" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <InputText id="email" class="form-control" @bind-Value="user.Email" />
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <InputText id="password" type="password" class="form-control" @bind-Value="user.Password" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+</EditForm>
+
+@code {
+    private User user = new();
+
+     private async Task HandleLogin()
+    {
+        @* var result = await SignInManager.PasswordSignInAsync(user.Email, user.Password, false, false);
+        if (result.Succeeded)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            // Hantera felinloggning här
+        } *@
+    } 
+}
+

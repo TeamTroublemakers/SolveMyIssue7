@@ -9,22 +9,15 @@ using SolveMyIssue7.DataAccess.Services.Interfaces;
 
 namespace SolveMyIssue7.DataAccess.Auth
 {
-    public class UserStore : IUserPasswordStore<User>
+    public class UserStore : IUserStore<User>
     {
-        private readonly IUserRepository _userRepository;
-
-        private readonly IMongoCollection<User> _users;
-
-        public UserStore(IUserRepository userRepository)
+        public UserStore(IMongoDatabase database) : base()
         {
-            _userRepository = userRepository;
-            // _users = database.GetCollection<User>("Users");
         }
 
-        public async Task<IdentityResult> CreateAsync(User user, CancellationToken cancellationToken)
+        public Task<IdentityResult> CreateAsync(User user, CancellationToken cancellationToken)
         {
-            await _users.InsertOneAsync(user, cancellationToken: cancellationToken);
-            return IdentityResult.Success;
+            throw new NotImplementedException();
         }
 
         public Task<IdentityResult> DeleteAsync(User user, CancellationToken cancellationToken)
@@ -52,11 +45,6 @@ namespace SolveMyIssue7.DataAccess.Auth
             throw new NotImplementedException();
         }
 
-        public Task<string?> GetPasswordHashAsync(User user, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<string> GetUserIdAsync(User user, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
@@ -67,17 +55,7 @@ namespace SolveMyIssue7.DataAccess.Auth
             throw new NotImplementedException();
         }
 
-        public Task<bool> HasPasswordAsync(User user, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task SetNormalizedUserNameAsync(User user, string? normalizedName, CancellationToken cancellationToken)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task SetPasswordHashAsync(User user, string? passwordHash, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
