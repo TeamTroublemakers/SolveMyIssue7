@@ -1,16 +1,10 @@
-.container-fluid {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.container-fluid > div {
-  flex: 1 0 0;
+.navbar {
+  width: 100vw;
+  position: relative;
 }
 
-#navbarNav {
-  margin-right: auto !important;
-  margin-left: auto !important;
-  gap: 2rem !important;
+.nav-links {
+  margin-inline: auto;
 }
 
 .logo {
@@ -21,6 +15,7 @@
   font-family: 'Nunito Sans', sans-serif;
   font-size: 2rem;
   padding-right: 0.75rem;
+  width: 0;
 }
 
 .nav-link {

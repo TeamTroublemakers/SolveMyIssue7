@@ -8,22 +8,32 @@
 
 
 
-<div class="container mt-3">
-    <h2 class="display-4 glassmorphism">Issues</h2>
+<div style="margin-top:10vh;" class="container">
+    <h3 style="opacity:0.8">Issues</h3>
     <div class="row">
         @foreach (var issue in issues)
         {
             <div class="col-md-4 mb-3 card-style">
-                <div class="card glassmorphism">
+                <div class="card glassmorphism card-hover">
                     <div class="card-body ">
-                        <h5 class="card-title">@issue.Title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">@issue.Category</h6>
-                        <p class="card-text">@issue.Description</p>
-                        <a href="issueDetails/@issue.Id" class="card-link">More Details</a>
+                        <div style="display:flex; flex-direction:row; justify-content:space-between;">
+                            <div>
+                                <h5 class="card-title">@issue.Title</h5>
+                            </div>
+                            <div style="opacity:0.6"> 
+                                @issue.Created.ToString("yyyy-MM-dd")
+                            </div>
+
+                        </div>
+                        <h6 class="card-subtitle mb-2" style="opacity:0.6">@issue.Category</h6>
+                        <p class="card-text" style="opacity:0.86">@issue.Description</p>
+
+                        <div style="display:flex; flex-direction:row; margin-top:2rem">
+                            <a href="issueDetails/@issue.Id" class="card-link" style="color:var(--primary); text-decoration:none;">More Details</a>
+                        </div>
                     </div>
-                    <div class="card-footer text-muted">
-                        @issue.Created.ToString("yyyy-MM-dd")
-                    </div>
+                    @* <div class="card-footer text-muted">
+                    </div> *@
                 </div>
             </div>
         }

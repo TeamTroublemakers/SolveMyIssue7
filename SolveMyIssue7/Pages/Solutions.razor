@@ -21,7 +21,7 @@
 
 
 
-    <button class="btn btn-primary" type="submit">Add Solution</button>
+    <button class="buttone primary" type="submit">Add Solution</button>
     
 </EditForm>
 <label> <h4>Display all Users Solutions </h4></label>
@@ -30,9 +30,9 @@
     <div>
         <div>@solution.Text</div>
 
-            <button class="btn btn-primary" type="button" @onclick="async () => await Like(solution)">Like</button>
+            <button class="buttone primary" type="button" @onclick="async () => await Like(solution)">Like</button>
             <span class="like-count">@solution.Likes</span>
-            <button class="btn btn-primary" type="button" @onclick="async () => await Dislike(solution)">Dislike</button>
+            <button class="buttone primary" type="button" @onclick="async () => await Dislike(solution)">Dislike</button>
             <span class="dislike-count">@solution.Dislikes</span>
 
           

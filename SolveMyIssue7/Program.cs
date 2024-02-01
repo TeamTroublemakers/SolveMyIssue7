@@ -1,4 +1,3 @@
-using AspNetCore.Identity.Mongo;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
@@ -8,11 +7,7 @@ using SolveMyIssue7.DataAccess.Models;
 using SolveMyIssue7.DataAccess.Services;
 using SolveMyIssue7.DataAccess.Services.Interfaces;
 using SolveMyIssue7.Routes;
-using AspNetCore.Identity.Mongo;
-using AspNetCore.Identity.Mongo.Model;
 using Microsoft.AspNetCore.Components.Authorization;
-
-var mongoConnectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,28 +21,6 @@ builder.Services.AddSingleton(db);
 
 builder.Services.AddSingleton<IIssueRepository, IssueRepository>();
 builder.Services.AddSingleton<ISolutionRepository, SolutionRepository>();
-
-// builder.Services.AddIdentity<User, Role>()
-// 	.AddUserStore<UserStore>() // Byt ut mot din anpassade UserStore
-// 	.AddRoleStore<UserStore>() // Byt ut mot din anpassade RoleStore
-// 	.AddDefaultTokenProviders();
-
-// builder.Services.AddIdentity<User, Role>()
-// 	.AddMongoDbStores<User, Role, Guid>(mongoConnectionString, "SolveMyIssue")
-// 	.AddDefaultTokenProviders();
-
-
-// builder.Services.AddScoped<AuthenticationService>();
-// builder.Services.AddScoped<ISecurityStampValidator, CustomSecurityStampValidator<UserModel>>();
-
-
-
-// builder.Services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<User>>();
-
-
-
-// At the ConfigureServices section in Startup.cs
-// builder.Services.AddIdentityMongoDbProvider<MongoUser>();
 
 var app = builder.Build();
 
