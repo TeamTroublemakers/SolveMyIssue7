@@ -32,7 +32,9 @@
         </div>
 
         <div style="margin-top:2rem" class="d-flex justify-content-end gap-2">
-            <a href="solution/@issue.Id" class="buttone">Add solution</a>
+            @* <a href="solution/@issue.Id" class="buttone">Add solution</a> *@
+            <a href="solution/@issue.Id" class="buttone" style="color: var(--primary)">Add solution</a>
+
             <a href="updateIssue/@issue.Id" class="buttone">Edit</a>
         </div>
     </div>
@@ -41,6 +43,7 @@
 
     <div>
         <h2 style="opacity:0.8">Solutions</h2>
+         <div class="card glassmorphism card-hover">
         @if (solutions != null && solutions.Any())
         {
             foreach (var solution in solutions)
@@ -58,6 +61,7 @@
             <p>No solutions found for this issue.</p>
         }
 
+    </div>
     </div>
 }
 

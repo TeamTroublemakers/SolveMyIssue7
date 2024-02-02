@@ -14,9 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-var localConnectionString = "mongodb://localhost:27017";
-var client = new MongoClient(localConnectionString);
-var db = client.GetDatabase("SolveMyIssue"); 
+
+var client = new MongoClient("mongodb+srv://thetroublemakerscloud23:Cloud23@solvemyissue.tawpybz.mongodb.net/?retryWrites=true&w=majority ");
+var db = client.GetDatabase("SolveMyIssue");
 builder.Services.AddSingleton(db);
 
 builder.Services.AddSingleton<IIssueRepository, IssueRepository>();

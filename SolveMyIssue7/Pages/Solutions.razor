@@ -8,11 +8,13 @@
 @inject ISolutionRepository SolutionRepository
 @inject NavigationManager NavManager
 
+<div style="margin-top:10vh;" class="container">
+<h3 style="opacity:0.8">Solutions</h3>
 
-<h1>Solutions</h1>
+@* <h1>Solutions</h1> *@
 <p>Provide below your Solution!</p>
-<img src="logoSMI.png" alt="logo image" width="150" height="150" />
-
+@* <img src="logoSMI.png" alt="logo image" width="150" height="150" /> *@
+    <div class="glassmorphism card-hover">
 <EditForm class="form-group" Model="newSolution" OnSubmit="AddSolution">
 
     <img src="Sample_User_Icon.png" alt="users profile image" width="20" height="20" />
@@ -24,11 +26,13 @@
     <button class="buttone primary" type="submit">Add Solution</button>
     
 </EditForm>
-<label> <h4>Display all Users Solutions </h4></label>
+    </div>
+@* <label> <h4>Display all Users Solutions </h4></label> *@
+    <h3 style="opacity:0.8">Display all Users Solutions </h3>
 <Virtualize Items="displaySolution.ToList()"  Context="solution">
    <li class="card bg-gradient border-3">
-    <div>
-        <div>@solution.Text</div>
+            <div class="AllSolutions"
+        <div> @solution.Text</div>
 
             <button class="buttone primary" type="button" @onclick="async () => await Like(solution)">Like</button>
             <span class="like-count">@solution.Likes</span>
@@ -40,7 +44,7 @@
    </li>
 </Virtualize>
 
-
+ </div>
 @code {
 
     [Parameter]

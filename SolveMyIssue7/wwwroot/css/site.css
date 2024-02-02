@@ -80,6 +80,8 @@ p {
   padding-block: 0.5rem;
 }
 
+
+
 .buttone:hover {
   color: var(--on-background);
   opacity: 0.9;
@@ -242,13 +244,17 @@ input:-webkit-autofill:active {
 }
 
 .solution-container {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    color: #422931;
 }
 
 img {
   width: 15%;
   height: 15%;
+}
+.AllSolutions {
+    color: #422931;
 }
