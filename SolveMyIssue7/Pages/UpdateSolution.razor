@@ -8,9 +8,10 @@
 @inject IIssueRepository IssueRepository
 
 @inject NavigationManager NavManager
+<div style="margin-top:10vh;" class="container">
+    <h3 style="opacity:0.8">Update Solution</h3>
 
-<h3>Update Solution</h3>
-
+    <div class="card glassmorphism card-hover">
 <EditForm Model="solution" OnValidSubmit="Update">
     <DataAnnotationsValidator />
     <ValidationSummary />
@@ -19,10 +20,11 @@
         <label for="text">Change Text below</label>
         <InputText id="text" class="form-control" @bind-Value="solution.Text" />
     </div>
-
-    <button type="submit" class="btn btn-primary">Update</button>
+            
+    <button   type="submit" class="buttone primary mt-2">Update</button>
 </EditForm>
-
+</div>
+</div>
 @code {
     [Parameter]
     public string solutionId { get; set; }
