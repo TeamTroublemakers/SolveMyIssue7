@@ -6,47 +6,119 @@
 @inject IIssueRepository NewIssueRepository
 @inject NavigationManager NavManager
 
-
-
-<div style="margin-top:10vh;" class="container">
-    <h3 style="opacity:0.8">Issues</h3>
+<div style="margin-top: 10vh;" class="container">
+    <h3 style="opacity: 0.8">Issues</h3>
     <div class="row">
-        @foreach (var issue in issues)
+        <div class="col-md-12 mb-3">
+            <label for="categoryFilter">Filter by Category:</label>
+            <select id="categoryFilter" @bind="selectedCategory" class="form-control">
+                <option value="">All_Categories</option>
+
+                @foreach (var category in Enum.GetValues(typeof(Category)))
+                {
+                    <option value="@category">@category</option>
+                }
+            </select>
+            <button class="btn btn-primary" @onclick="ExecuteFilter">Filter</button>
+        </div>
+
+        <div class="col-md-12 mb-3">
+            @if (!string.IsNullOrEmpty(selectedCategoryString))
+            {
+                <p>Selected Category: @selectedCategoryString</p>
+            }
+        </div>
+
+        @if (filteredIssues.Any())
         {
-            <div class="col-md-4 mb-3 card-style">
-                <div class="card glassmorphism card-hover">
-                    <div class="card-body ">
-                        <div style="display:flex; flex-direction:row; justify-content:space-between;">
-                            <div>
-                                <h5 class="card-title">@issue.Title</h5>
+            @foreach (var issue in filteredIssues)
+            {
+                <div class="col-md-4 mb-3 card-style">
+                    <div class="card glassmorphism card-hover">
+                        <div class="card-body">
+                            <div style="display:flex; flex-direction:row; justify-content:space-between;">
+                                <div>
+                                    <h5 class="card-title">@issue.Title</h5>
+                                </div>
+                                <div style="opacity:0.6">
+                                    @issue.Created.ToString("yyyy-MM-dd")
+                                </div>
                             </div>
-                            <div style="opacity:0.6"> 
-                                @issue.Created.ToString("yyyy-MM-dd")
+                            <h6 class="card-subtitle mb-2" style="opacity:0.6">@issue.Category</h6>
+                            <p class="card-text" style="opacity:0.86">@issue.Description</p>
+                            <div style="display:flex; flex-direction:row; margin-top:2rem">
+                                <a href="issueDetails/@issue.Id" class="card-link" style="color:var(--primary); text-decoration:none;">More Details</a>
                             </div>
-
-                        </div>
-                        <h6 class="card-subtitle mb-2" style="opacity:0.6">@issue.Category</h6>
-                        <p class="card-text" style="opacity:0.86">@issue.Description</p>
-
-                        <div style="display:flex; flex-direction:row; margin-top:2rem">
-                            <a href="issueDetails/@issue.Id" class="card-link" style="color:var(--primary); text-decoration:none;">More Details</a>
                         </div>
                     </div>
-                    @* <div class="card-footer text-muted">
-                    </div> *@
                 </div>
-            </div>
+            }
+           
+        }
+        else
+        {
+            <p>No issues found.</p>
         }
     </div>
 </div>
 
 @code {
     private List<Issue> issues = new List<Issue>();
+    private List<Issue> filteredIssues = new List<Issue>();
+    private Category? selectedCategory;
+    private string selectedCategoryString = "All_Categories";
 
     protected override async Task OnInitializedAsync()
     {
-        var issuesEnumerable = await NewIssueRepository.GetAllAsync();
-        issues = issuesEnumerable.ToList();
+        if (selectedCategoryString != null)
+        {
+            var issuesEnumerable = await NewIssueRepository.GetAllAsync();
+            issues = issuesEnumerable.ToList();
+
+
+        }
     }
+    private void ExecuteFilter()
+    {
+
+        filteredIssues.Clear();
+        if (selectedCategory.HasValue && issues != null)
+        {
+            selectedCategoryString = selectedCategory.Value.ToString();
+            if (selectedCategoryString.Equals("All_Categories"))
+            {
+                foreach (var issue in issues) {
+                    filteredIssues.Add(issue);
+                }
+            }
+            else
+            {
+                foreach (var issue in issues)
+                { 
+                    if (issue.Category != null)
+                    {
+                        if (issue.Category.Equals(selectedCategoryString))
+                        {
+                            filteredIssues.Add(issue);
+                        }
+
+
+                    }
+                }
+            }
+        }
+        else
+
+        {
+            foreach (var issue in issues)
+            {
+                filteredIssues.Add(issue);
+            }
+            selectedCategoryString = string.Empty;
+        }
+    
+}
+
+        
 
 }

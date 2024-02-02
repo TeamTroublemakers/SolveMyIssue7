@@ -25,7 +25,12 @@
 	</div>
 	<div class="form-group">
 		<label>Category</label>
-		<InputText class="form-control" @bind-Value="newIssue.Category"></InputText>
+		<InputSelect class="form-control" @bind-Value="newIssue.Category">
+			@foreach (var category in Enum.GetValues(typeof(Category)))
+			{
+				<option value="@category">@category</option>
+			}
+		</InputSelect>
 	</div>
 	<div class="form-group">
 		<label>Date</label>
